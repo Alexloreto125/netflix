@@ -5,18 +5,18 @@ import { IconContext } from "react-icons";
 const generi22 = () => {
   return (
     <IconContext.Provider value={{ className: "icons", color: "#FF00FF" }}>
-      <div className="container">
-        <div className="row d-flex justify-content-between align-items-center ">
-          <div className="col">
-            <form className="d-flex align-items-center text-white">
-              <h1>TV Shows</h1>
-              <div className="dropdown">
+      <div className="container-fluid">
+        <div className="d-flex justify-content-between mt-2">
+          <div className="d-flex">
+            <h2 className="mb-4 text-white">TV Shows</h2>
+            <div className="btn-group" role="group">
+              <div className="dropdown ms-4 mt-1">
                 <button
-                  className="btn btn-dark border border-light dropdown-toggle ms-5"
                   type="button"
+                  className="btn btn-secondary btn-sm dropdown-toggle rounded-0"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style={{ width: "155px " }}
+                  style={{ backgroundColor: "#221f1f" }}
                 >
                   Genres
                 </button>
@@ -28,19 +28,19 @@ const generi22 = () => {
                   </li>
                   <li>
                     <a className="dropdown-item" href="/">
-                      K-Drama
+                      KDrama
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="/">
-                      Romantic K-Drama
+                      Thriller
                     </a>
                   </li>
                 </ul>
               </div>
-            </form>
+            </div>
           </div>
-          <div className="col">
+          <div>
             <BiGrid />
             <BiGridAlt />
           </div>
