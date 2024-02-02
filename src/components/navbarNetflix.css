@@ -1,0 +1,23 @@
+body {
+  background-color: #221f1f;
+}
+.icons {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  font-size: 1.5em;
+}
+
+.header {
+  color: #ff00ff;
+}
+#kids {
+  color: #ff00ff;
+}
+
+.navbar-toggler-icon {
+  color: #ff00ff;
+}
+.navbar-toggler {
+  color: #ff00ff;
+  border-color: #ff00ff;
+}
