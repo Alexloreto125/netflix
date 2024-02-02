@@ -1,9 +1,9 @@
 // ! LEGGERE I COMMENTI PER CAPIRE IL CODICE
 ///RIGA 28: ENDPOINT E FETCH
-///RIGA 40-54: LOGICA DEL CAROSELLO (AVANTI-INDIETRO) RIGA 140-159 L'INVISIBILITA' DELLE FRECCE
+///RIGA 40-54: LOGICA DEL CAROSELLO (AVANTI-INDIETRO)
+///L'INVISIBILITA' DELLE FRECCE --> RIGA 137-141 FRECCIA PREV -157-163 FRECCIA NEXT
 ///RIGA 56: COLONNE RESPONSIVE, 1 MOBILE 6 DESKTOP
-///
-///
+///RIGA 87: CREAZIONE DEI CAROSELLI CON SLICE E MAP
 import React, { Component } from "react";
 import "./interazione.css";
 
@@ -84,6 +84,8 @@ class interazione extends Component {
                       <div className="carousel-inner position-relative">
                         <div className="carousel-item active">
                           <div className="row g-0 ">
+                            {/* //! PRENDO LA SEQUENZA CHE MI INTERESSA (ES ACTIVEINDEX = 1 NE VOGLIO VEDERE 6 -->" ITEMS PER PAGE" . PARTO DA 1 E PRENDI IL RESTO FINO AD ARRIVARE A 6 (IMMAGINI CHE VOGLIO VEDERE) . Quindi vedrò img[1] fino a img[6] )  */}
+                            {/* //! ADESSO MAPPO LA FREQUENZA CHE MI INTERESSA PER CREARE IL MIO CAROSELLO  */}
                             {datiAPI
                               .slice(activeIndex, activeIndex + itemsPerPage)
                               .map((data, i) => (
@@ -136,6 +138,7 @@ class interazione extends Component {
                         className={`carousel-control-prev ${
                           activeIndex === 0 ? "invisible" : ""
                         }`}
+                        //* STESSA COSA DI PRIMA: ACTIVEINDEX = 0? VUOL DIRE CHE SIAMO ALL'INIZIO QUINDI PRIMA IMMAGINE
                         type="button"
                         data-bs-target="#carouselExampleIndicators1"
                         data-bs-slide="prev"
@@ -157,6 +160,7 @@ class interazione extends Component {
                             ? "invisible"
                             : ""
                         }`}
+                        //* QUI INVECE ABBIAMO L'INDEX CHE SUPERA LA LUNGHEZZA TOTALE E ALLORA NON POSSIAMO ANDARE AVANTI PERCHE' NON C'E' NULLA.
                         type="button"
                         data-bs-target="#carouselExampleIndicators1"
                         data-bs-slide="next"
